@@ -14,23 +14,24 @@ int main ()
 	pid_t pid;
 
 	while(1)
-	{ write(1 ,"$" ,2);
-		n_char = getline ( &buffer , &buffer_size ,stdin);
-		array= malloc(sizeof (char*)*1024);
-		token = strtok (buffer ," \t\n");
+	{ write(1, "$", 2);
+		n_char = getline (&buffer , &buffer_size ,stdin);
+		array = malloc(sizeof (char * ) * 1024);
+		token = strtok(buffer ," \t\n");
 		while(token)
-		{array[i] = token ;
-			token =strtok (NULL , " \t\n");
+		{
+			array[i] = token ;
+			token = strtok (NULL , " \t\n");
 			i++;
 		}
 		array [i] = NULL;
 		pid = fork();
-		if (pid=0)
-		{if ( execve( array[0] , array , NULL) == -1)
+		if (pid == 0)
+		{if (execve(array[0] , array , NULL) == -1)
 			perror ("execve");
 		}
 		else 
-			wait (&status);
+			wait(&status);
 		i=0;
 		free (array);
 	}
