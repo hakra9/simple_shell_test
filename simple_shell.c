@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unisted.h>
+#include <unistd.h>
 #include <sys/wait.h>
  
 int main ()
@@ -26,7 +26,7 @@ int main ()
 		array [i] = NULL;
 		pid = fork();
 		if (pid=0)
-		{if ( execve( array[0] , array , NULL) = -1)
+		{if ( execve( array[0] , array , NULL) == -1)
 			perror ("execve");
 		}
 		else 
