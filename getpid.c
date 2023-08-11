@@ -4,7 +4,9 @@
 int main () 
 {
 	pid_t pid;
+	ppid_t ppid;
+	ppid = getppid();
 	pid = getpid();
-	printf("my pid= %d ", pid);
+	printf("my pid= %d \n myppid = %d \n ", pid,ppid);
 	return 0;
 }
