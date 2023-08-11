@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unsited.h>
+#include <unisted.h>
 #include <sys/wait.h>
  
 int main ()
