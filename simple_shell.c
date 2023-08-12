@@ -13,13 +13,13 @@ int main ()
 	pid_t pid;
 
 	while(1)
-	{ write(1, "$", 2);
+	{ write(1, "$ ", 2);
 		n_char = getline (&buf , &buf_size ,stdin);
 		array = malloc(sizeof (char * ) * 1024);
 		token = strtok(buf ," \t\n");
 		while(token)
 		{
-			array[i] = token ;
+			array[j] = token ;
 			token = strtok (NULL , " \t\n");
 			j++;
 		}
