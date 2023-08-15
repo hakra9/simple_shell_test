@@ -25,7 +25,7 @@ int main(void)
         }
         if (buf[strlen(buf) - 1] = '\n')
             buf[strlen(buf) - 1] = '\0';
-        array = tokenize(buf, buf_size);
+        array = **tokenize(buf, buf_size);
         free(array);
     }
     free(buf);
