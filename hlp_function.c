@@ -18,7 +18,7 @@ void display_prompt(void)
 *@buf_size: buffr size
 * Return: a pointer of an array of args
 */
-char *tokenize(char *buf, size_t buf_size)
+char tokenize(char *buf, size_t buf_size)
 {
     char *token;
     char **array;
