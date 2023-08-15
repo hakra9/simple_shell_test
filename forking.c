@@ -19,7 +19,7 @@ void forking(char **array, pid_t pid)
         {
             if (execvp(array[0], array) == -1)
             {
-                perror("error");
+                perror(array[0]);
                 exit(EXIT_FAILURE);
             }
         }
