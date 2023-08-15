@@ -1,3 +1,9 @@
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
 *forking - a fanction that handel forking
 * @array: an array of arrguments

@@ -1,3 +1,9 @@
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
 *display_prompt - a function that prints the prompt
 */
