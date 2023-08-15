@@ -32,5 +32,5 @@ char *tokenize(char *buf, size_t buf_size)
             j++;
         }
         array[j] = NULL; 
-        return (array);
+        return (*array);
 }
