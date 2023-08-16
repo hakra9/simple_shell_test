@@ -13,7 +13,7 @@ int main(int argc, char **argv, char **env)
     char **array;
     int n_char;
     pid_t pid;
-    char prog_name;
+    char *prog_name;
 
     prog_name = argv[0];
      while (1)
