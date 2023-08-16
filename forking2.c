@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-
+extern char **environ;
 /**
 *forking - a fanction that handel forking
 * @array: an array of arrguments
