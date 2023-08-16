@@ -10,5 +10,6 @@ extern char **environ;
 void display_prompt();
 char **tokenize(char *buf, size_t buf_size);
 void forking(char **array, char *prog_name);
+void exit_shell();
  
 #endif
