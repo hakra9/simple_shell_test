@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main(int argc, char **argv, char **env)
 {
     char *buf = NULL;
     size_t buf_size = 0;
@@ -13,7 +13,9 @@ int main(void)
     char **array;
     int n_char;
     pid_t pid;
+    char prog_name;
 
+    prog_name = argv[0];
      while (1)
     {
         display_prompt();
@@ -26,7 +28,7 @@ int main(void)
         if (buf[strlen(buf) - 1] = '\n')
             buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
-        forking(array, pid);
+        forking(array, pid, prog_name);
         free(array);
     }
     free(buf);

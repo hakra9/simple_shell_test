@@ -10,7 +10,7 @@
 * @array: an array of arrguments
 * @pid: process id
 */
-void forking(char **array, pid_t pid)
+void forking(char **array, pid_t pid, char prog_name)
 {
     int status;
     
@@ -19,7 +19,7 @@ void forking(char **array, pid_t pid)
         {
             if (execve(array[0], array, environ) == -1)
             {
-                perror("");
+                perror(prog_name);
                 exit(EXIT_FAILURE);
             }
         }
