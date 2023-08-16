@@ -22,7 +22,7 @@ void forking(char **array, pid_t pid, char *prog_name)
         {
             if (execve(array[0], array, environ) == -1)
             {
-            snprintf(msg_pgn, sizeof(msg_pgn), "%d: %s", prog_name, strerror(errno));
+            snprintf(msg_pgn, sizeof(msg_pgn), "%s: %s", prog_name, strerror(errno));
                 exit(EXIT_FAILURE);
             }
         }
