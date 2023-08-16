@@ -10,16 +10,17 @@
 * @array: an array of arrguments
 * @pid: process id
 */
-void forking(char **array, pid_t pid, char **prog_name)
+void forking(char **array, pid_t pid, char prog_name)
 {
     int status;
+    char msg_pgn[300];
     
     pid = fork();
         if (pid == 0)
         {
             if (execve(array[0], array, environ) == -1)
             {
-                perror(prog_name);
+            snprintf(msg_pgn, sizeof(msg_pgn), "%s: %s", prog_name, strerror(errno));
                 exit(EXIT_FAILURE);
             }
         }

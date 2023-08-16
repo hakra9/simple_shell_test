@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **env)
     pid_t pid;
     char *prog_name;
 
-    **prog_name = argv[0];
+    *prog_name = argv[0];
      while (1)
     {
         display_prompt();
@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env)
         if (buf[strlen(buf) - 1] = '\n')
             buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
-        forking(array, pid, **prog_name);
+        forking(array, pid, prog_name);
         free(array);
     }
     free(buf);
