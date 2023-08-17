@@ -5,13 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_environment() {
-    char **env_var = environ;
-    while (*env_var) {
-        printf("%s\n", *env_var);
-        env_var++;
-    }
-}
 
 int main(int argc, char **argv, char **env)
 {
