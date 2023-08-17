@@ -10,6 +10,6 @@ extern char **environ;
 void display_prompt();
 char **tokenize(char *buf, size_t buf_size);
 void forking(char **array, pid_t pid, char *prog_name);
-void exit_shell(); // Add the exit_shell function prototype
-
+void exit_shell();
+void print_environment();
 #endif

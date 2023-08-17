@@ -10,6 +10,5 @@
 
 void exit_shell() 
 {
-    printf("Exiting the shell.\n");
     exit(0); // Exit the program with status code 0 (success)
 }

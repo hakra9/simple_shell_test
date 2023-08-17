@@ -5,6 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void print_environment() {
+    char **env_var = environ;
+    while (*env_var) {
+        printf("%s\n", *env_var);
+        env_var++;
+    }
+}
+
 int main(int argc, char **argv, char **env)
 {
     char *buf = NULL;
@@ -32,6 +40,9 @@ int main(int argc, char **argv, char **env)
         if (strcmp(array[0], "exit") == 0) {
             exit_shell(); // Call the exit built-in function
             break; // Exit the loop
+        }
+	else if (strcmp(array[0], "env") == 0) {
+            print_environment(); // Call the print_environment function
         }
 
         forking(array, pid, prog_name );

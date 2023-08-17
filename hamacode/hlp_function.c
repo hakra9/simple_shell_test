@@ -4,7 +4,6 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
 *display_prompt - a function that prints the prompt
 */
@@ -12,6 +11,7 @@ void display_prompt(void)
 {
     write(STDOUT_FILENO, "$ ", 2);
 }
+
 /**
 *tokenize - a function tha seperat the command line into args
 *@buf: a pointer to the buffer holds the command line
