@@ -10,7 +10,7 @@ int main(int argc, char **argv, char **env)
     char *buf = NULL;
     size_t buf_size = 0;
     char *token;
-    char **array;
+    char **array, **cmnd;
     int n_char;
     char *prog_name;
 
@@ -27,10 +27,17 @@ int main(int argc, char **argv, char **env)
         if (buf[strlen(buf) - 1] = '\n')
             buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
-        if (strcmp(array[0], "exit") == 0) {
-            exit_shell(); // Call the exit built-in function
-            break; // Exit the loop
+        if (strstr(array[0], "/") != NULL){
+            if (strcmp(array[0], "exit") == 0) 
+            {
+                exit_shell(); // Call the exit built-in function
+                break; // Exit the loop
+            }
+            if (strcmp(array[0], "env") == 0) {
+                print_environment(*env); // Call the print_environment function
+            }
         }
+        cmnd = 
         forking(array, prog_name);
         free(array);
     }
