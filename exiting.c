@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
+
 
 /**
  * exit_shell - for exite the shell
