@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env)
         if (buf[strlen(buf) - 1] = '\n')
             buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
-        if (strstr(array[0], "/") != NULL){
+        if (strstr(array[0], "/") == NULL){
             if (strcmp(array[0], "exit") == 0) 
             {
                 exit_shell(); // Call the exit built-in function
