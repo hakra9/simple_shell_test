@@ -23,11 +23,11 @@ char **srch_cmnd(char **array, char **directory)
     while (info) {
     if (info->d_type == DT_REG)
     {
-        if (strcmp(info->d_name == array[0]) == 0)
+        if (strcmp(info->d_name, array[0]) == 0)
         {
-            if (access(array[0], X_OK) == 0)
+            if (access(info->d_name, X_OK) == 0)
             {
-                return (array);
+                return (strcat(strcat(directory[i], "/"), array));
             }
         }
     }

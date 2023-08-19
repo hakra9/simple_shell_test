@@ -24,7 +24,7 @@ char **tokenize(char *buf, size_t buf_size)
     char **array;
     int j = 0;
 
-   array = malloc(sizeof(char *) * (buf_size));
+   array = malloc(sizeof(char *) * (buf_size + 1));
         token = strtok(buf, " \t\n");
         while (token)
         {

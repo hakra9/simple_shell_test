@@ -1,13 +1,13 @@
 #include <sys/stat.h>
 #include "main.h"
 
-char **find_path(char *env,char var_name, char **array)
+char **find_path(char *env, char **array)
 {
     char path[1024];
     char **directory = NULL;
     char *token;
-    int j = 0, i = 0;
-    char **file_name;
+    int j = 0, i = 0, k = 0, x = 0;
+    char **path_;
 
     while (env[i])
     {
@@ -18,22 +18,25 @@ char **find_path(char *env,char var_name, char **array)
             {
                 j++;
             }
-            path = path[j + 1];
-            token = strtok(path, ":");
-            directory = malloc(sizeof (char *) * strlen(token));
+            path_ = malloc(sizeof(char) * (strlen(path) - j));
+            for (k ; k < (strlen(path) - j); k++){
+                path_[k] = path[j];
+                j++;
+            }
+            path_[k + 1] = '\0';
+            token = strtok(path_, ":");
+            directory = malloc(sizeof(char) * strlen(token));
             while (token)
             {
-            dircetory[i] = malloc(sizeof (char *) * strlen(token) + 1);
+            dircetory[x] = malloc(sizeof(char) * strlen(token) + 1);
             token = strtok(NULL, ":");
-            i++;
+            x++;
             }
-            directory[i] = NULL;
+            directory[x] = NULL;
             if (srch_cmnd(array, dircetory))
                 return (srch_cmnd(array, dircetory));
         }
         i++;
-        if (!env)
-            break;
     }
     return (NULL);
 }

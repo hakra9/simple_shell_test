@@ -10,6 +10,6 @@ void print_environment(char **env)
     while (*env) 
     {
         printf("%s\n", *env);
-        env_var++;
+        env++;
     }
 }
