@@ -17,14 +17,14 @@ char *find_path(char **env, char *cmnd)
             {
                 j++;
             }
-            path_ = malloc(sizeof(char) * (strlen(path) - j));
+            path_ = malloc(sizeof(char) * (strlen(path) - j + 1));
             for (k = 0 ; k < (strlen(path) - j); k++){
                 path_[k] = path[j];
                 j++;
             }
             path_[k] = '\0';
             token = strtok(path_, ":");
-            directory = malloc(sizeof(char *) * strlen(token));
+            directory = malloc(sizeof(char *) * strlen(token) + 1);
             while (token)
             {
             directory[x] = malloc(sizeof(char) * strlen(token) + 1);

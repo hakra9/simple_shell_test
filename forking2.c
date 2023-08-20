@@ -11,7 +11,7 @@
 * @array: an array of arrguments
 * @pid: process id
 */
-void forking(char **array, char *prog_name)
+void forking(char **array, char *prog_name, char **env)
 {
     int status;
     char msg_pgn[300];
@@ -20,7 +20,7 @@ void forking(char **array, char *prog_name)
     pid = fork();
         if (pid == 0)
         {
-            if (execve(array[0], array, environ) == -1)
+            if (execve(array[0], array, env) == -1)
             {
             snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
             perror(msg_pgn);

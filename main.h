@@ -11,7 +11,7 @@
 extern char **environ;
 void display_prompt();
 char **tokenize(char *buf, size_t buf_size);
-void forking(char **array, char *prog_name);
+void forking(char **array, char *prog_name, char **env);
 void exit_shell();
 char *find_path(char **env, char *cmnd);
 char *srch_cmnd(char **array, char **directory);
