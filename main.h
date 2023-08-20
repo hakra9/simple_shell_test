@@ -15,7 +15,7 @@ void forking(char **array, char *prog_name);
 void exit_shell();
 char *find_path(char **env, char *cmnd);
 char **srch_cmnd(char **array, char **directory);
-void built_ins(char **array);
+int built_ins(char **array);
 void print_environment(char **env);
 
 #endif

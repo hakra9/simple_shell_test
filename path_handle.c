@@ -33,8 +33,8 @@ char *find_path(char **env, char *cmnd)
             x++;
             }
             directory[x] = NULL;
-            if (srch_cmnd(&cmnd, dircetory))
-                return (srch_cmnd(&cmnd, dircetory));
+            if (srch_cmnd(&cmnd, directory))
+                return (srch_cmnd(&cmnd, directory));
         }
         i++;
     }
