@@ -1,5 +1,5 @@
 #include "main.h"
-int built_ins(char **array)
+int built_ins(char **array, char **env)
 {
     if (strcmp(array[0], "exit") == 0) 
     {

@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env)
             buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
-            if (built_ins(array) == 1)
+            if (built_ins(array, env) == 1)
                 array[0] = find_path(env, array [0]); 
         }
         forking(array, prog_name);
