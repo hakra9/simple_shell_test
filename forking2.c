@@ -4,9 +4,8 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
 
-extern char **environ;
+
 /**
 *forking - a fanction that handel forking
 * @array: an array of arrguments
@@ -32,5 +31,4 @@ void forking(char **array, char *prog_name)
         {
             wait(&status);
         }
-        return;
 }

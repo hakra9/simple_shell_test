@@ -21,7 +21,6 @@ int main(int argc, char **argv, char **env)
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
-            printf("\nExiting shell.\n");
             break;
         }
         if (buf[strlen(buf) - 1] = '\n')
