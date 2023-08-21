@@ -13,12 +13,12 @@ int main(int argc, char **argv, char **env)
     char **array;
     int n_char;
     char *prog_name;
+    int n = 1;
 
     prog_name = argv[0];
     while (1)
     {
-        if mode(1)
-            display_prompt();
+        display_prompt();
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
