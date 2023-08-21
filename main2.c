@@ -15,6 +15,7 @@ int main(int argc, char **argv, char **env)
     char *prog_name;
 
     prog_name = argv[0];
+    while (1) {
     display_prompt();
     while (1)
     {
@@ -35,4 +36,5 @@ int main(int argc, char **argv, char **env)
     }
     free(buf);
     return (0);
+    }
 }
