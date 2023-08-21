@@ -1,6 +1,6 @@
 #include "main.h"
 
-char *find_path(char **env, char *cmnd)
+char *find_path(char **env, char **cmnd)
 {
     char path[1024];
     char **directory = NULL;
@@ -33,7 +33,7 @@ char *find_path(char **env, char *cmnd)
             x++;
             }
             directory[x] = NULL;
-            char *result = srch_cmnd(*cmnd, directory);
+            char *result = srch_cmnd(cmnd, directory);
             if (result)
                 return result;
             }
