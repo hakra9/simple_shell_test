@@ -14,6 +14,7 @@ int main(int argc, char **argv, char **env)
     int n_char;
     char *prog_name;
     int n = 1;
+    char msg_pgn[300];
 
     prog_name = argv[0];
     while (1)

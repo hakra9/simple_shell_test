@@ -10,7 +10,7 @@ char *srch_cmnd(char *array, char **directory)
     DIR *dirp;
     int i = 0;
     struct dirent *info;
-    char *address;
+    char *result;
 
     while (directory[i]) {
         dirp = opendir(directory[i]);
