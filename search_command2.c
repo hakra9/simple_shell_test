@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-char *srch_cmnd(char *array, char **directory)
+char *srch_cmnd(char **array, char **directory)
 {
     DIR *dirp;
     int i = 0;
