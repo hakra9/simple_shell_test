@@ -34,7 +34,7 @@ int main(int argc, char **argv, char **env)
         forking(array, prog_name, env);
         free(array);
     }
+    }
     free(buf);
     return (0);
-    }
 }
