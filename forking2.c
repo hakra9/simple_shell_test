@@ -22,8 +22,9 @@ void forking(char **array, char *prog_name, char **env)
         {
             if (execve(array[0], array, env) == -1)
             {
-            snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
-            perror(msg_pgn);
+                snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
+                perror(msg_pgn);
+                display_prompt();
                 exit(EXIT_FAILURE);
             }
         }
@@ -31,4 +32,5 @@ void forking(char **array, char *prog_name, char **env)
         {
             wait(&status);
         }
+    display_prompt();
 }
