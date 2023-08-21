@@ -31,5 +31,4 @@ void forking(char **array, char *prog_name, char **env)
         {
             wait(&status);
         }
-    display_prompt();
 }
