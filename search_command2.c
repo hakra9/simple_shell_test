@@ -10,6 +10,7 @@ char *srch_cmnd(char *array, char **directory)
     DIR *dirp;
     int i = 0;
     struct dirent *info;
+    char *address;
 
     while (directory[i]) {
         dirp = opendir(directory[i]);
@@ -21,15 +22,15 @@ char *srch_cmnd(char *array, char **directory)
         while (info) {
             if (info->d_type == DT_REG) {
                 if (strcmp(info->d_name, array) == 0) {
-                    char *result = malloc(strlen(directory[i]) + strlen("/") + strlen(array) + 1);
-                    strcpy(result, directory[i]);
-                    strcat(result, "/");
-                    strcat(result, array);
-                    if (access(result, X_OK) == 0) {
+                    address = malloc(strlen(directory[i]) + strlen("/") + strlen(array) + 1);
+                    strcpy(address, directory[i]);
+                    strcat(address, "/");
+                    strcat(address, array);
+                    if (access(address, X_OK) == 0) {
                         closedir(dirp);
-                        return result;
+                        return address;
                     }
-                    free(result);
+                    free(address);
                 }
             }
             info = readdir(dirp);

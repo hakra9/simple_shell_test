@@ -6,7 +6,7 @@ char *find_path(char **env, char *cmnd)
     char **directory = NULL;
     char *token;
     int j = 0, i = 0, k, x = 0;
-    char *path_;
+    char *path_, *result;
 
     while (env[i])
     {
@@ -29,7 +29,7 @@ char *find_path(char **env, char *cmnd)
             x++;
             }
             directory[x] = '\0';
-            char *result = srch_cmnd(cmnd, directory);
+            result = srch_cmnd(cmnd, directory);
             if (result)
                 return result;
             }
