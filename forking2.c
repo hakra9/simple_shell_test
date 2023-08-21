@@ -24,7 +24,6 @@ void forking(char **array, char *prog_name, char **env)
             {
                 snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
                 perror(msg_pgn);
-                display_prompt();
                 exit(EXIT_FAILURE);
             }
         }
