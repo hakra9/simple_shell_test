@@ -23,8 +23,8 @@ int main(int argc, char **argv, char **env)
         {
             break;
         }
-        if (buf[strlen(buf) - 1] == '\n')
-            buf[strlen(buf) - 1] = '\0';
+        //if (buf[strlen(buf) - 1] == '\n')
+            //buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
