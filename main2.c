@@ -17,8 +17,8 @@ int main(int argc, char **argv, char **env)
     prog_name = argv[0];
     while (1)
     {
-        if (1)
-            display_prompt();
+        display_prompt();
+        if (argv) {
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
@@ -33,6 +33,7 @@ int main(int argc, char **argv, char **env)
         }
         forking(array, prog_name, env);
         free(array);
+    }
     }
     free(buf);
     return (0);
