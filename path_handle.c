@@ -13,13 +13,9 @@ char *find_path(char **env, char *cmnd)
         if (strstr(env[i], "PATH=") != NULL)
         {
             strcpy(path, strstr(env[i], "PATH="));
-            while (path[j] != '=')
-            {
-                j++;
-            }
-            path_ = malloc(sizeof(char) * (strlen(path) - j + 1));
-            for (k = 0 ; k < (strlen(path) - j); k++){
-                path_[k] = path[j];
+            path_ = malloc(sizeof(char) * (strlen(path) - 4));
+            for (k = 0 ; k < (strlen(path) - 5); k++){
+                path_[k] = path[j + 5];
                 j++;
             }
             path_[k] = '\0';
@@ -32,7 +28,7 @@ char *find_path(char **env, char *cmnd)
             token = strtok(NULL, ":");
             x++;
             }
-            directory[x] = NULL;
+            directory[x] = '\0';
             char *result = srch_cmnd(cmnd, directory);
             if (result)
                 return result;
