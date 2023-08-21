@@ -1,6 +1,6 @@
 #include "main.h"
 
-char *find_path(char **env, char **cmnd)
+char *find_path(char **env, char *cmnd)
 {
     char path[1024];
     char **directory = NULL;
