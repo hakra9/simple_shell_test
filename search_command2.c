@@ -20,11 +20,11 @@ char *srch_cmnd(char *array, char **directory)
         info = readdir(dirp);
         while (info) {
             if (info->d_type == DT_REG) {
-                if (strcmp(info->d_name, array[0]) == 0) {
-                    char *result = malloc(strlen(directory[i]) + strlen("/") + strlen(array[0]) + 1);
+                if (strcmp(info->d_name, array) == 0) {
+                    char *result = malloc(strlen(directory[i]) + strlen("/") + strlen(array) + 1);
                     strcpy(result, directory[i]);
                     strcat(result, "/");
-                    strcat(result, array[0]);
+                    strcat(result, array);
                     if (access(result, X_OK) == 0) {
                         closedir(dirp);
                         return result;
