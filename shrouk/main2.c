@@ -21,6 +21,7 @@ int main(int argc, char **argv, char **env)
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
+            write(STDOUT_FILENO, "\n", 1);
             break;
         }
         if (buf[strlen(buf) - 1] == '\n')
