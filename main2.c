@@ -19,7 +19,7 @@ int main(int argc, char **argv, char **env)
     while (1)
     {
         n_char = getline(&buf, &buf_size, stdin);
-        printf("%s", buf)
+        printf("%s", buf);
         if (n_char == -1) 
         {
             break;
