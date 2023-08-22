@@ -18,10 +18,10 @@ int main(int argc, char **argv, char **env)
 
     prog_name = argv[0];
     mode = (argc > 1 ? 0 : 1);
-    if (mode == 1){
-            display_prompt();
-        }
+    
     while (1){
+        if (mode == 1)
+            display_prompt();
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
@@ -43,9 +43,6 @@ int main(int argc, char **argv, char **env)
         }
         forking(array, prog_name, env);
         free(array);
-        if (mode == 1){
-            display_prompt();
-        }
     }
     free(buf);
     return (0);
