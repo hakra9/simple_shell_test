@@ -39,9 +39,9 @@ int main(int argc, char **argv, char **env)
             if (built_ins(array, env) == 1)
                 array[0] = find_path(env, array [0]);
             if (array[0] == NULL){
-                snprintf(msg_pgn, sizeof(msg_pgn), "%s 1: %d: notfound", prog_name, buf[0]);
+                snprintf(msg_pgn, sizeof(msg_pgn), "%s: 1: %d: notfound", prog_name, buf[0]);
                 perror(msg_pgn);
-                exit(EXIT_FAILURE);
+                exit;
             }
         }
         forking(array, prog_name, env);
