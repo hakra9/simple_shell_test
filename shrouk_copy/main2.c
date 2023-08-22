@@ -14,7 +14,7 @@ int main(int argc, char **argv, char **env)
     int n_char;
     char *prog_name;
     int mode;
-    char msg_pgn[300];
+    char msg_pgn[300], temp[500];
 
     prog_name = argv[0];
     if (argc > 1)
@@ -37,10 +37,9 @@ int main(int argc, char **argv, char **env)
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
-                array[0] = find_path(env, array [0]);
-            if (array[0] == NULL){
-                snprintf(msg_pgn, sizeof(msg_pgn), "%s: 1: %d: ", prog_name, buf[0]);
-                perror(msg_pgn);
+                temp[0] = find_path(env, array [0]);
+            if (temp[0] == NULL){
+                snprintf(msg_pgn, sizeof(msg_pgn), "%s: 1: %s: not found", prog_name, array[0]);
                 exit;
             }
         }
