@@ -23,12 +23,12 @@ int main(int argc, char **argv, char **env)
         //mode = 1;
    // }   
     mode = (argc > 1 ? 0 : 1);
+    if (mode == 1){
+            display_prompt();
+        }
     while (1)
     {
         n_char = getline(&buf, &buf_size, stdin);
-        if (mode == 0){
-            display_prompt();
-        }
         if (n_char == -1) 
         {
             write(STDOUT_FILENO, "\n", 1);
