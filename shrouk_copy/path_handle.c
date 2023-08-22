@@ -35,5 +35,5 @@ char *find_path(char **env, char *cmnd)
             }
         i++;
     }
-    return (-1);
+    return (NULL);
 }
