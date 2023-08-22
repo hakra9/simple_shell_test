@@ -9,12 +9,10 @@ int main(int argc, char **argv, char **env)
 {
     char *buf = NULL;
     size_t buf_size = 0;
-    char *token;
     char **array;
     int n_char;
     char *prog_name, *temp;
     int mode;
-    char msg_pgn[300];
 
     prog_name = argv[0];
     if (isatty(fileno(stdin))) {
