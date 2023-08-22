@@ -17,11 +17,12 @@ int main(int argc, char **argv, char **env)
     char msg_pgn[300];
 
     prog_name = argv[0];
-    if (argc > 1)
-        mode = 0;
-    else{
-        mode = 1;
-    }    
+    //if (argc > 1)
+        //mode = 0;
+    //else{
+        //mode = 1;
+   // }   
+    (argc > 1 ? mode = 0, mode = 1);
     while (1)
     {
         if (mode == 1)
