@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **env)
     while (1)
     {
         n_char = getline(&buf, &buf_size, stdin);
-        if (mode == 1){
+        if (mode == 0){
             display_prompt();
         }
         if (n_char == -1) 
