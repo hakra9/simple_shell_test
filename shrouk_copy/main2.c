@@ -17,8 +17,11 @@ int main(int argc, char **argv, char **env)
     char msg_pgn[300];
 
     prog_name = argv[0];
-    mode = (argc > 1 ? 0 : 1);
-    
+    if (isatty(fileno(stdin))) {
+        mode = 1; 
+    } else {
+        mode = 0; 
+    }
     while (1){
         if (mode == 1)
             display_prompt();
