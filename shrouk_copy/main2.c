@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env)
     //else{
         //mode = 1;
    // }   
-    (argc > 1 ? mode = 0, mode = 1);
+    (argc > 1 ? mode = 0 : mode = 1);
     while (1)
     {
         if (mode == 1)
