@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **env)
                 temp = find_path(env, array[0]);
             if (temp == NULL && mode == 0){
                 printf("%s: 1: %s: not found\n", prog_name, array[0]);
-                exit;
+                break;
             }
             if (temp != NULL)
                 array[0] = find_path(env, array[0]);
