@@ -38,6 +38,10 @@ int main(int argc, char **argv, char **env)
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
                 array[0] = find_path(env, array [0]);
+            if (array[0] == NULL){
+                snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
+                perror(msg_pgn);
+                exit(EXIT_FAILURE);
             }
         }
         forking(array, prog_name, env);
