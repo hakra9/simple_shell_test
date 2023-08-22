@@ -12,9 +12,9 @@ int main(int argc, char **argv, char **env)
     char *token;
     char **array;
     int n_char;
-    char *prog_name;
+    char *prog_name, *temp;
     int mode;
-    char msg_pgn[300], temp[500];
+    char msg_pgn[300];
 
     prog_name = argv[0];
     if (argc > 1)
@@ -37,11 +37,12 @@ int main(int argc, char **argv, char **env)
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
-                temp[0] = find_path(env, array [0]);
-            if (temp[0] == NULL){
+                temp = find_path(env, array [0]);
+            if (temp == NULL){
                 snprintf(msg_pgn, sizeof(msg_pgn), "%s: 1: %s: not found", prog_name, array[0]);
                 exit;
             }
+            array[0] = find_path(env, array [0]);
         }
         forking(array, prog_name, env);
         free(array);
