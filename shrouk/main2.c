@@ -39,7 +39,6 @@ int main(int argc, char **argv, char **env)
             if (built_ins(array, env) == 1)
                 array[0] = find_path(env, array [0]);
             }
-        }
         forking(array, prog_name, env);
         free(array);
     }
