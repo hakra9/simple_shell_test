@@ -34,14 +34,12 @@ int main(int argc, char **argv, char **env)
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
                 temp = find_path(env, array[0]);
-            if (temp == NULL){
+            if (temp == NULL && mode == 0){
                 printf("%s: 1: %s: not found\n", prog_name, array[0]);
-                if (mode == 1){
-                    display_prompt();
-                }
-                continue;
+                exit;
             }
-            array[0] = find_path(env, array[0]);
+            if (temp != NULL)
+                array[0] = find_path(env, array[0]);
         }
         forking(array, prog_name, env);
         free(array);
