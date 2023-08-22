@@ -48,6 +48,7 @@ int main(int argc, char **argv, char **env)
         }
         forking(array, prog_name, env);
         free(array);
+        display_prompt();
     }
     free(buf);
     return (0);
