@@ -25,8 +25,9 @@ int main(int argc, char **argv, char **env)
     mode = (argc > 1 ? 0 : 1);
     while (1)
     {
-        if (mode == 1)
+        if (mode == 1){
             display_prompt();
+        }
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
