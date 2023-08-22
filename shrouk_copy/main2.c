@@ -41,14 +41,16 @@ int main(int argc, char **argv, char **env)
             if (built_ins(array, env) == 1)
                 temp = find_path(env, array[0]);
             if (temp == NULL){
-                printf("%s: 1: %s: not found", prog_name, array[0]);
+                printf("%s: 1: %s: not found\n", prog_name, array[0]);
                 continue;
             }
             array[0] = find_path(env, array[0]);
         }
         forking(array, prog_name, env);
         free(array);
-        display_prompt();
+        if (mode == 1){
+            display_prompt();
+        }
     }
     free(buf);
     return (0);
