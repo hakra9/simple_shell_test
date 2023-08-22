@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **env)
             if (built_ins(array, env) == 1)
                 temp = find_path(env, array[0]);
             if (temp == NULL){
-                snprintf("%s: 1: %s: not found", prog_name, array[0]);
+                printf("%s: 1: %s: not found", prog_name, array[0]);
                 exit;
             }
             array[0] = find_path(env, array[0]);
