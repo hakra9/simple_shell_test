@@ -18,11 +18,10 @@ int main(int argc, char **argv, char **env)
 
     prog_name = argv[0];
     mode = (argc > 1 ? 0 : 1);
-    while (1)
-    {
-        if (mode == 1){
+    if (mode == 1){
             display_prompt();
         }
+    while (1){
         n_char = getline(&buf, &buf_size, stdin);
         if (n_char == -1) 
         {
@@ -37,12 +36,18 @@ int main(int argc, char **argv, char **env)
                 temp = find_path(env, array[0]);
             if (temp == NULL){
                 printf("%s: 1: %s: not found\n", prog_name, array[0]);
+                if (mode == 1){
+                    display_prompt();
+                }
                 continue;
             }
             array[0] = find_path(env, array[0]);
         }
         forking(array, prog_name, env);
         free(array);
+        if (mode == 1){
+            display_prompt();
+        }
     }
     free(buf);
     return (0);
