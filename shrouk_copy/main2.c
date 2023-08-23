@@ -24,13 +24,13 @@ int main(int argc, char **argv, char **env)
         if (mode == 1 && argc > 0)
             display_prompt();
         n_char = getline(&buf, &buf_size, stdin);
+        if (buf[strlen(buf) - 1] == '\n')
+            buf[strlen(buf) - 1] = '\0';
         if (n_char == -1) 
         {
             write(STDOUT_FILENO, "\n", 1);
             break;
         }
-        if (buf[strlen(buf) - 1] == '\n')
-            buf[strlen(buf) - 1] = '\0';
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
