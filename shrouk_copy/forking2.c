@@ -17,6 +17,7 @@ void forking(char **array, char *prog_name, char **env)
     char msg_pgn[300];
     pid_t pid;
 
+    if (array){
     pid = fork();
         if (pid == 0)
         {
@@ -31,4 +32,5 @@ void forking(char **array, char *prog_name, char **env)
         {
             wait(&status);
         }
+    }
 }

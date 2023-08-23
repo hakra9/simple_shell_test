@@ -38,5 +38,5 @@ char *srch_cmnd(char *array, char **directory)
         closedir(dirp);
         i++;
     }
-    return NULL;
+    return (NULL);
 }

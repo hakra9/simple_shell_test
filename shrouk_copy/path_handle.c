@@ -5,7 +5,8 @@ char *find_path(char **env, char *cmnd)
     char path[1024];
     char **directory = NULL;
     char *token;
-    int j = 0, i = 0, k, x = 0;
+    size_t k;
+    int j = 0, i = 0, x = 0;
     char *path_, *result;
 
     while (env[i])
