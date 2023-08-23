@@ -30,11 +30,11 @@ int main(int argc, char **argv, char **env)
             break;
         }
         length = strlen(buf);
-        if (length > 0 && buf[length - 1] == '\n') {
+        /**if (length > 0 && buf[length - 1] == '\n') {
             buf[length - 1] = '\0';
-                length--;
-        }
-        while (length > 0 && (buf[length - 1] == ' ' || buf[length - 1] == '\t')) {
+            length--;
+        }*/
+        while (length > 0 && (buf[length - 1] == ' ' || buf[length - 1] == '\t' || buf[length - 1] == '\n')) {
             buf[length - 1] = '\0';
             length--;
         }
