@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <errno.h>
+#include <dirent.h>
+#include <fcntl.h>
 
 
 

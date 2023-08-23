@@ -1,9 +1,9 @@
 #include "main.h"
-#include <sys/types.h>
+/**#include <sys/types.h>
 #include <dirent.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <fcntl.h>
+#include <fcntl.h>*/
 
 char *srch_cmnd(char *array, char **directory)
 {

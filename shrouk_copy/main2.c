@@ -34,8 +34,16 @@ int main(int argc, char **argv, char **env)
             buf[length - 1] = '\0';
             length--;
         }*/
-        while (length > 0 && (buf[length - 1] == ' ' || buf[length - 1] == '\t' || buf[length - 1] == '\n')) {
+        /**while (length > 0 && (buf[length - 1] == ' ' || buf[length - 1] == '\t' || buf[length - 1] == '\n')) {
             buf[length - 1] = '\0';
+            length--;
+        }*/
+        while (length > 0){
+            if (buf[length - 1] == ' ' || buf[length - 1] == '\t' )
+                buf[length - 1] = '\0';
+            if (buf[length - 1] == '\n'){
+                buf[length - 1] = '\0';
+            }
             length--;
         }
         if (buf[0] == '\0')
