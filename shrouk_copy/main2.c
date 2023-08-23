@@ -38,6 +38,8 @@ int main(int argc, char **argv, char **env)
             buf[length - 1] = '\0';
             length--;
         }
+        if (buf[0] == '\0')
+            break;
         array = tokenize(buf, buf_size);
         if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
