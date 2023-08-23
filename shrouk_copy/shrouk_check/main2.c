@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **env){
         if (buf[0] == '\0')
             break;
         array = tokenize(buf, buf_size);
-        array[0] = check_path(env, array[0], mode);
+        array[0] = check_path(env, array[0], mode, prog_name);
         forking(array, prog_name, env);
         free(array);
     }

@@ -1,5 +1,5 @@
 #include "main.h"
-char *check_path(char **env, char *array, int mode)
+char *check_path(char **env, char **array, int mode, char *prog_name)
 {
     char *temp;
             if (strstr(array[0], "/") == NULL){
