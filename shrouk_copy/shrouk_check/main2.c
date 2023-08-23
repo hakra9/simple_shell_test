@@ -13,7 +13,7 @@ int main(int argc, char **argv, char **env){
     int n_char , mode;
 
     prog_name = argv[0];
-    mode = (isatty(fileno(stdin)) ? 1 : 0)
+    mode = (isatty(fileno(stdin)) ? 1 : 0);
     while (1){
         if (mode == 1 && argc > 0)
             display_prompt();
