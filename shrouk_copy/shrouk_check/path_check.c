@@ -1,8 +1,11 @@
 #include "main.h"
-char *check_path(char **env, char **array, int mode, char *prog_name)
+void ch_p(char **env, int mode, char *prog_name, size_t buf_size, char *buf)
 {
     char *temp;
-            if (strstr(array[0], "/") == NULL){
+    char **array;
+
+    array = tokenize(buf, buf_size);
+        if (strstr(array[0], "/") == NULL){
             if (built_ins(array, env) == 1)
                 temp = find_path(env, array[0]);
             if (temp == NULL && mode == 0){
@@ -12,5 +15,6 @@ char *check_path(char **env, char **array, int mode, char *prog_name)
             if (temp != NULL)
                 array[0] = find_path(env, array[0]);
         }
-    return (array[0]);
+        forking(array, prog_name, env);
+        free(array);
 }

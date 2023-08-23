@@ -21,6 +21,5 @@ char *find_path(char **env, char *cmnd);
 char *srch_cmnd(char *array, char **directory);
 int built_ins(char **array, char **env);
 void print_environment(char **env);
-void ch_p(char **env, int mode, char *prog_name, size_t buf_size, char *buf);
 
 #endif
