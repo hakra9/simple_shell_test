@@ -10,7 +10,6 @@ int main(int argc, char **argv, char **env)
 {
     char *buf = NULL, *prog_name;
     size_t buf_size = 0, length;
-    char **array;
     int n_char , mode;
 
     prog_name = argv[0];
