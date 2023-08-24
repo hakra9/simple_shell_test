@@ -4,6 +4,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 
 /**
@@ -12,7 +13,7 @@
 */
 void exit_shell(void)
 {
-	exit(0);
+	exit(errno);
 
 }
 
