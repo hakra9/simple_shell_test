@@ -10,13 +10,13 @@ int main(int argc, char **argv, char **env)
 {
 	char *buf = NULL, **array, *prog_name, *temp;
 	size_t buf_size = 0, length;
-	int n_char, mode;
+	int n_char = 0, mode;
 
 	prog_name = argv[0];
 	mode = determine_mode();
 	while (1)
 	{
-		if (mode == 1 && argc > 0)
+		if (mode == 1 && argc > 0 && n_char != 0)
 			display_prompt();
 		n_char = getline(&buf, &buf_size, stdin);
 		if (n_char == -1)
