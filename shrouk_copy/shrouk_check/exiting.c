@@ -10,8 +10,9 @@
  * exit_shell - for exite the shell
  * returne : Exit the program with status code 0 (success)
 */
-void exit_shell() 
+void exit_shell(void)
 {
-    exit(0); 
+	exit(0);
+
 }
 

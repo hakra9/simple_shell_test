@@ -10,7 +10,7 @@
 */
 void display_prompt(void)
 {
-    write(STDOUT_FILENO, "$ ", 2);
+	write(STDOUT_FILENO, "$ ", 2);
 }
 /**
 *tokenize - a function tha seperat the command line into args
@@ -20,18 +20,18 @@ void display_prompt(void)
 */
 char **tokenize(char *buf, size_t buf_size)
 {
-    char *token;
-    char **array;
-    int j = 0;
+	char *token;
+	char **array;
+	int j = 0;
 
-   array = malloc(sizeof(char *) * (buf_size + 1));
-        token = strtok(buf, " \t\n");
-        while (token)
-        {
-            array[j] = token;
-            token = strtok(NULL, " \t\n");
-            j++;
-        }
-        array[j] = NULL; 
-        return (array);
+	array = malloc(sizeof(char *) * (buf_size + 1));
+	token = strtok(buf, " \t\n");
+	while (token)
+	{
+		array[j] = token;
+		token = strtok(NULL, " \t\n");
+		j++;
+	}
+	array[j] = NULL;
+	return (array);
 }
