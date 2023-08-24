@@ -4,7 +4,6 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
 
 
 /**
@@ -28,7 +27,7 @@ void forking(char **array, char *prog_name, char **env)
 			{
 				snprintf(msg_pgn, sizeof(msg_pgn), "%s", prog_name);
 				perror(msg_pgn);
-				exit(errno);
+				exit(2);
 			}
 		}
 		else
