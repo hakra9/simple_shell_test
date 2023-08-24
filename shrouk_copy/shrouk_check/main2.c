@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	char *buf = NULL, **array, *prog_name, *temp == NULL;
+	char *buf = NULL, **array, *prog_name, *temp = NULL;
 	size_t buf_size = 0, length;
 	int n_char, mode;
 
