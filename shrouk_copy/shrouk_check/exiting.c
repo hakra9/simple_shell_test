@@ -13,7 +13,7 @@
 */
 void exit_shell(void)
 {
-	exit(errno);
+	exit(0);
 
 }
 
