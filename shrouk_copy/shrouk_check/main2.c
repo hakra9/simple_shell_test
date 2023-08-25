@@ -10,7 +10,7 @@ int main(int argc, char **argv, char **env)
 {
 	char *buf = NULL, **array, *prog_name, *temp = NULL;
 	size_t buf_size = 0, length;
-	int n_char, mode;
+	int n_char, mode, is_builtin;
 
 	prog_name = argv[0];
 	mode = determine_mode();
@@ -32,15 +32,15 @@ int main(int argc, char **argv, char **env)
 			break;
 		array = tokenize(buf, buf_size);
 		if (strstr(array[0], "/") == NULL)
-		{
-			if (built_ins(array, env) == 1){
+		{	is_builtin = built_ins(array, env);
+			if (is_builtin == 1){
 				temp = find_path(env, array[0]);
 			if (temp == NULL && mode == 0)
 				handle_command_not_found_error(prog_name, array[0]);
 			if (temp != NULL)
 				array[0] = find_path(env, array[0]);
 			}
-			if (built_ins(array, env) == 0)
+			if (is_builtin == 0)
 				free(array);
 		}
 		if (array){
