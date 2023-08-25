@@ -24,6 +24,7 @@ char *find_path(char **env, char *cmnd)
 			}
 			path_[k] = '\0';
 			token = strtok(path_, ":");
+			free(path_);
 			directory = malloc(sizeof(char *) * strlen(token) + 1);
 			while (token)
 			{
@@ -34,6 +35,7 @@ char *find_path(char **env, char *cmnd)
 			}
 			directory[x] = '\0';
 			result = srch_cmnd(cmnd, directory);
+			free(directory);
 			if (result)
 				return (result);
 		}
