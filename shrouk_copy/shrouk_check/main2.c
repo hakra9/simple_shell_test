@@ -33,6 +33,7 @@ int main(int argc, char **argv, char **env)
 		array = tokenize(buf, buf_size);
 		if (strstr(array[0], "/") == NULL)
 		{	is_builtin = built_ins(array, env);
+		printf ("is_builtin = %d", is_builtin);
 			if (is_builtin == 1){
 				temp = find_path(env, array[0]);
 			if (temp == NULL && mode == 0)
