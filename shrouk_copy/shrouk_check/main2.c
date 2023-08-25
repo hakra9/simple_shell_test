@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	char *buf = NULL, **array, *prog_name, *temp = NULL;
+	char *buf = NULL, **array, *prog_name, *temp == NULL;
 	size_t buf_size = 0, length;
 	int n_char, mode;
 
@@ -40,12 +40,14 @@ int main(int argc, char **argv, char **env)
 			if (temp != NULL)
 				array[0] = find_path(env, array[0]);
 			}
-			free(buf);
-			exit;
+			if (built_ins(array, env) == 0)
+				free(array);
 		}
-		free(buf);
+		if (array){
 		forking(array, prog_name, env);
 		free(array);
+		}
 	}
+	free(buf);
 	return (0);
 }
