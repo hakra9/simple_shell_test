@@ -8,14 +8,19 @@
 
 int built_ins(char **array, char **env)
 {
+	int i;
+
 	if (strcmp(array[0], "exit") == 0)
 	{
-		exit_shell();
-		return (0);
+		exit(0);
 	}
 	if (strcmp(array[0], "env") == 0)
 	{
-		print_environment(env);
+		while (*env)
+		{
+		printf("%s\n", *env);
+		env++;
+		}
 		return (0);
 	}
 	return (1);
