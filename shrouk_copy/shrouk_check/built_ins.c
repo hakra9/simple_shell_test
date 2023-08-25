@@ -8,8 +8,6 @@
 
 int built_ins(char **array, char **env)
 {
-	int i;
-
 	if (strcmp(array[0], "exit") == 0)
 	{
 		exit(0);
