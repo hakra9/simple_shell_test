@@ -34,6 +34,8 @@ char *find_path(char **env, char *cmnd)
 			}
 			directory[x] = '\0';
 			result = srch_cmnd(cmnd, directory);
+			free(path_);
+			free(directory);
 			if (result)
 				return (result);
 		}
