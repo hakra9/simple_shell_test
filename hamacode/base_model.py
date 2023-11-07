@@ -8,12 +8,22 @@ class BaseModel:
     def __init__(self *args ,**kwargs):
         """new basemodel.
         Args:
-            *args:multi argument 
+            *args:multi argument not used
             **kwargs:dictionnary
         """
-    self.id = str(uuid4())
-    self.created_at = datetime.today()
-    self.updated_at = datetime.today()
+        time_format = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
+        if len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "created_at" or k == "updated_at":
+                    self.__dict__[k] = datetime.strptime(v, time_format)
+                else:
+                    self.__dict__[k] = v
+        else:
+            models.storage.new(self)
+    
 
     def __str__(self):
         """return signification of the class,user,dic"""
