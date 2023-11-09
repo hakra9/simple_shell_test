@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from uuid import uuid4
 from datetime import datetime
-
+import models
 
 class BaseModel:
 "class basemodel"
@@ -23,8 +23,7 @@ class BaseModel:
                     self.__dict__[k] = v
         else:
             models.storage.new(self)
-    
-
+   
     def __str__(self):
         """return signification of the class,user,dic"""
         classe_name = self.__class__.__name__
@@ -33,6 +32,7 @@ class BaseModel:
     def save(self):
         """update the public instance attribute withe the current dattime"""
         self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
